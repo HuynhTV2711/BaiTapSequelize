@@ -28,22 +28,21 @@ const getLikeByRestaurant = async (req, res) => {
 
   const like = async (req, res)=>{
     try {
+      let {resId, userId} = req.params;
         let {
-            user_id,
-            res_id,
             date_like
           } = req.body;
 
           let newData ={
-            user_id,
-            res_id,
+            user_id: userId,
+            res_id:resId,
             date_like
           }
 
           await connect.like_res.create(newData);
           res.send("Thêm thành công");
     } catch (error) {
-        res.send("Lỗi")
+        res.send(error)
     }
   }
 

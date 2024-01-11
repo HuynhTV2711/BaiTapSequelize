@@ -27,17 +27,16 @@ const getRateByRestaurant = async (req, res) => {
 
 
   const rate = async (req, res)=>{
+    let {resId, userId} = req.params;
     try {
         let {
-            user_id,
-            res_id,
             amount,
             date_rate
           } = req.body;
 
           let newData ={
-            user_id,
-            res_id,
+            user_id: userId,
+            res_id: resId,
             amount,
             date_rate
           }

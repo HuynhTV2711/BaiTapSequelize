@@ -7,7 +7,6 @@ const connect = initModels(sequelize);
     let {userId} = req.params;
     try {
         let {
-            user_id,
             food_id,
             amount,
             code,

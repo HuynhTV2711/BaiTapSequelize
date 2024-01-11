@@ -6,6 +6,6 @@ const rateRes = express.Router();
 
 rateRes.get("/get-rate-by-res", getRateByRestaurant);
 rateRes.get("/get-rate-by-user", getRateByUser);
-rateRes.post("/create-reate", rate);
+rateRes.post("/create-reate/:resId/:userId", rate);
 
 export default rateRes;
